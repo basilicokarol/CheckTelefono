@@ -1,23 +1,38 @@
-# Check Telefono
+- punto uno scaricare il file da classroom e rinominarlo adeguatamente come è sritto nella consegna
+- punto due aprire il file su Visual studio code
+- ora incominciamo a svolgere l esercizio seguendo la consegna
 
-Ricevuto come parametro un vettore di string, ritornare al chiamante la prima stringa che assomiglia molto ad un numero di telefono cellulare italiano ovvero:
-- che inizia con +39 (esattamente lungo  13)
-- oppure con 0039 (esattamente lungo 14)
-- oppure con un 3 (esattamente lungo 10)
+- Come prima cosa per scorrere ogni elemento dentro l' array usiamo il foreach\
 
-Se il numero non viene trovato, ritornare stringa vuota ""
+  foreach (var num in vettore){}
 
-Ad esempio.
-Se arriva "05417373", "3367726712",  "778823"
-Tornare "3367726712"
+- All' interno richiamiamo il metodo IsnumeroTelefonoItaliano e si controlla che num sia valido\
 
-Se arriva "33677267", "33677232",  "778823"
-Tornare ""
+  if (IsnumeroTelefonoItaliano(num))
+      {
+         return num;
+      }
+- Adesso si creano dei metodi che verificano le caratteristiche che un numero di telefono deve avere\
+- così verifichiamo i prefissi e la lunghezza della stringa se torna true vuol dire che è valida\
 
-Se arriva "", "05417723",  "+391231231234"
-Tornare "+391231231234"
+  if (num.Lenght == 13&& (num.Startswith("+39"))
+      {
+         return true;
+      }
 
-Se arriva "3", "05417723",  "00391231231230"
-Tornare ""
+- concludiamo eseguendo gli altri due modelli\
 
-etc
+if (num.Lenght == 14 && num.Startswith("0039"))
+   {
+         return true;
+   }
+
+if (num.Lenght == 10 && num.Startswith("3"))
+   {
+         return true;
+   }
+
+- se le condizioni non vengono rispettate nella stringa ritorna false e quindi il numero risulta non valido
+  
+
+   
